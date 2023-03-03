@@ -13,14 +13,20 @@ def multiply(x: float, y: float):
 def divide(x: float, y: float):
     return x / y
 
+
 def mod(x: float, y:float):
     return x % y
 
+
+def power(x: float, y: float):
+    return x ** y
+
+
 def main():
     while True:
-        choice = input("Choose operation (+, -, *, /, %): ")
+        choice = input("Choose operation (+, -, *, /, %, ^): ")
 
-        if choice in '+-*/':
+        if choice in '+-*/%^':
             try:
                 operand_1 = float(input("First operand: "))
                 operand_2 = float(input("Second operand: "))
@@ -37,8 +43,9 @@ def main():
             elif choice == '/':
                 print(f'{operand_1} / {operand_2} = {divide(operand_1, operand_2)}')
             elif choice == '%':
-		print(f'{operand_1} % {opreand_2} = {mod(operand_1, operand_2)}')
-
+                print(f'{operand_1} % {operand_2} = {mod(operand_1, operand_2)}')
+            elif choice == '^':
+                print(f'{operand_1} ^ {operand_2} = {power(operand_1, operand_2)}')
 
 if __name__ == "__main__":
     main()
