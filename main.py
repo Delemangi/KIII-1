@@ -1,3 +1,5 @@
+import math
+
 def add(x: float, y: float):
     return x + y
 
@@ -22,9 +24,13 @@ def power(x: float, y: float):
     return x ** y
 
 
+def factorial(x: int):
+    return math.factorial(x) 
+
+
 def main():
     while True:
-        choice = input("Choose operation (+, -, *, /, %, ^): ")
+        choice = input("Choose operation (+, -, *, /, %, ^, !): ")
 
         if choice in '+-*/%^':
             try:
@@ -46,6 +52,17 @@ def main():
                 print(f'{operand_1} % {operand_2} = {mod(operand_1, operand_2)}')
             elif choice == '^':
                 print(f'{operand_1} ^ {operand_2} = {power(operand_1, operand_2)}')
+
+        
+        if choice == '!':
+            try:
+                operand_1 = int(input("Operand: "))
+            except ValueError:
+                print("Not a number.")
+                continue
+
+            print(f'{operand_1}! = {factorial(operand_1)}')
+
 
 if __name__ == "__main__":
     main()
